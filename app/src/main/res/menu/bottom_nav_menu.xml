@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@id/reminders_dest"
+        android:icon="@drawable/ic_calendar"
+        android:title="@string/reminders_" />
+    <item
+        android:id="@id/my_plants_dest"
+        android:icon="@drawable/ic_leaf"
+        android:title="@string/my_plants" />
+    <item
+        android:id="@id/discover_dest"
+        android:icon="@drawable/ic_world"
+        android:title="@string/discover" />
+    <item
+        android:id="@id/settings_dest"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/settings" />
+</menu>

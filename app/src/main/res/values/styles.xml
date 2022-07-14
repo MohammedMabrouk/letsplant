@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--    Text Styles-->
+    <style name="small_title_style">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/green_3</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="big_title_style">
+        <item name="android:textColor">@color/green_3</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+</resources>
