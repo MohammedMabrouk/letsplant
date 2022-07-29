@@ -42,4 +42,10 @@
     <string name="reminders">reminders</string>
     <string name="reminders_">Reminders</string>
     <string name="upcoming">upcoming</string>
+    <string name="add_reminder">add reminder</string>
+    <string name="indoor_plants">Indoor Plants</string>
+    <string name="outdoor_plants">Outdoor Plants</string>
+    <string name="plants_care">Plants Care</string>
+    <string name="back">back</string>
+    <string name="share">share</string>
 </resources>

@@ -18,7 +18,23 @@
         android:id="@+id/discover_dest"
         android:name="com.mohamedmabrouk.letsplant.ui.discover.DiscoverFragment"
         android:label="fragment_discover"
-        tools:layout="@layout/fragment_discover" />
+        tools:layout="@layout/fragment_discover" >
+        <action
+            android:id="@+id/action_discover_dest_to_plants_list_dest"
+            app:destination="@id/plants_list_dest"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+
+        <action
+            android:id="@+id/action_discover_dest_to_articles_dest"
+            app:destination="@id/articles_dest"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+    </fragment>
 
     <fragment
         android:id="@+id/settings_dest"
@@ -28,4 +44,27 @@
     <!--Global action-->
     <action android:id="@+id/open_settings_fragment"
         app:destination="@id/settings_dest"/>
+    <fragment
+        android:id="@+id/plants_list_dest"
+        android:name="com.mohamedmabrouk.letsplant.ui.discover.plants.PlantsListFragment"
+        android:label="fragment_plants"
+        tools:layout="@layout/fragment_plants_list" >
+        <argument
+            android:name="plant_type"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_plants_list_dest_to_plant_details_dest"
+            app:destination="@id/plant_details_dest" />
+    </fragment>
+    <fragment
+        android:id="@+id/articles_dest"
+        android:name="com.mohamedmabrouk.letsplant.ui.discover.articles.ArticlesFragment"
+        android:label="fragment_articles"
+        tools:layout="@layout/fragment_articles" />
+    <fragment
+        android:id="@+id/plant_details_dest"
+        android:name="com.mohamedmabrouk.letsplant.ui.discover.plants.plantDetails.PlantDetailsFragment"
+        android:label="fragment_plant_details"
+        tools:layout="@layout/fragment_plant_details" />
 </navigation>

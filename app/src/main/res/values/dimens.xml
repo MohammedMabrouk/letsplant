@@ -8,5 +8,13 @@
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="fragment_vertical_guideline_margin">20dp</dimen>
+    <dimen name="fragment_vertical_guideline_margin">8dp</dimen>
+    <dimen name="fragment_horizontal_guideline_margin">8dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+    <dimen name="padding_8">8dp</dimen>
+    <dimen name="layout_discover_item_margin">4dp</dimen>
+    <dimen name="layout_discover_item_card_elevation">6dp</dimen>
+    <dimen name="round_bg_radius">20dp</dimen>
+    <dimen name="round_bg_padding">10dp</dimen>
 </resources>

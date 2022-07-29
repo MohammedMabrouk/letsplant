@@ -5,25 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green_1"
+    android:id="@+id/container"
     tools:context=".ui.reminders.RemindersFragment">
 
-    <TextView
-        android:id="@+id/tv_title1"
+    <include
+        android:id="@+id/page_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/to_do_list"
-        style="@style/small_title_style"
+        layout="@layout/layout_fragment_title"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toTopOf="@+id/guideline_top" />
-
-    <TextView
-        android:id="@+id/tv_title2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/reminders_"
-        style="@style/big_title_style"
-        app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_start"
@@ -44,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="20dp" />
+        app:layout_constraintGuide_begin="@dimen/fragment_horizontal_guideline_margin" />
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
@@ -54,7 +45,7 @@
         android:background="@color/green_1"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title2">
+        app:layout_constraintTop_toBottomOf="@+id/page_title">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
@@ -74,7 +65,21 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout" >
+    </androidx.viewpager2.widget.ViewPager2>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/extended_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/margin_16"
+        android:contentDescription="@string/add_reminder"
+        android:text="@string/add_reminder"
+        app:icon="@drawable/ic_add"
+        android:backgroundTint="@color/green_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

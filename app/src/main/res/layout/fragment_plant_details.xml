@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/green_1"
+    tools:context=".ui.discover.plants.plantDetails.PlantDetailsFragment">
+
+    <ImageView
+        android:id="@+id/iv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/back"
+        android:elevation="@dimen/margin_16"
+        android:padding="@dimen/padding_8"
+        android:src="@drawable/ic_arrow_back"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top"
+        app:tint="@color/black" />
+
+    <ImageView
+        android:id="@+id/iv_share"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:contentDescription="@string/share"
+        android:elevation="@dimen/margin_16"
+        android:padding="@dimen/padding_8"
+        android:src="@drawable/ic_share"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top"
+        app:tint="@color/black" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:minHeight="700dp">
+            <!--todo: modify -->
+            <ImageView
+                android:id="@+id/iv_plant_img"
+                android:layout_width="0dp"
+                android:layout_height="300dp"
+                android:background="@color/white"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/indoor" />
+
+            <TextView
+                android:id="@+id/tv_plant_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/round_white_bg_with_border"
+                android:maxWidth="300dp"
+                android:padding="@dimen/round_bg_padding"
+                android:text="Potus Plant"
+                android:textColor="@color/green_2"
+                android:textSize="24sp"
+
+                app:layout_constraintBottom_toBottomOf="@+id/iv_plant_img"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_plant_img" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tv_plant_title">
+
+                <include
+                    android:id="@+id/layout_overview"
+                    layout="@layout/layout_plant_info_item" />
+                <include
+                    android:id="@+id/layout_light"
+                    layout="@layout/layout_plant_info_item" />
+                <include
+                    android:id="@+id/layout_watering"
+                    layout="@layout/layout_plant_info_item" />
+                <include
+                    android:id="@+id/layout_temp"
+                    layout="@layout/layout_plant_info_item" />
+                <include
+                    android:id="@+id/layout_soil"
+                    layout="@layout/layout_plant_info_item" />
+                <include
+                    android:id="@+id/layout_propagation"
+                    layout="@layout/layout_plant_info_item" />
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="@dimen/fragment_vertical_guideline_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="@dimen/fragment_vertical_guideline_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="@dimen/fragment_horizontal_guideline_margin" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_end="@dimen/fragment_horizontal_guideline_margin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
