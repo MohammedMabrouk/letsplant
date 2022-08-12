@@ -8,10 +8,12 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.mohamedmabrouk.letsplant.R
+import com.mohamedmabrouk.letsplant.data.Plant
+import com.squareup.picasso.Picasso
 
 
 class PlantItemsAdapter(
-    private val plantItemsList: List<PlantItemModel>,
+    private val plantItemsList: List<Plant>,
     private val plantItemsClickListener: PlantItemsClickListener
 ) : RecyclerView.Adapter<PlantItemsAdapter.ViewHolder>() {
 
@@ -24,10 +26,15 @@ class PlantItemsAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val plantItem = plantItemsList[position]
-        holder.imageView.setImageResource(plantItem.img)
-        holder.textView.text = plantItem.title
+
+        Picasso.get()
+            .load(plantItem.imgUrl)
+            .placeholder(R.drawable.green_tea_placeholder)
+            .into(holder.imageView)
+
+        holder.textView.text = plantItem.name
         holder.cardView.setOnClickListener {
-            plantItemsClickListener.onItemClick(position, it)
+            plantItemsClickListener.onItemClick(plantItem, it)
         }
     }
 
@@ -42,6 +49,6 @@ class PlantItemsAdapter(
     }
 
     interface PlantItemsClickListener {
-        fun onItemClick(position: Int, view: View)
+        fun onItemClick(plant: Plant, view: View)
     }
 }

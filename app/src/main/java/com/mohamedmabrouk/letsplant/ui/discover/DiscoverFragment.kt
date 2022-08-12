@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import com.mohamedmabrouk.letsplant.R
+import com.mohamedmabrouk.letsplant.data.Discover
 import com.mohamedmabrouk.letsplant.databinding.FragmentDiscoverBinding
 import com.mohamedmabrouk.letsplant.util.Constants
 
@@ -46,23 +47,23 @@ class DiscoverFragment : Fragment(), DiscoverItemsAdapter.DiscoverItemClickListe
         _binding?.pageTitle?.tvTitle!!.text = getString(R.string.discover)
         _binding?.rvDiscover!!.layoutManager = GridLayoutManager(activity, 2)
 
-        val data = ArrayList<DiscoverItemModel>()
+        val data = ArrayList<Discover>()
         data.add(
-            DiscoverItemModel(
+            Discover(
                 R.drawable.indoor,
                 getString(R.string.indoor_plants),
                 Constants.DiscoverItem.INDOOR_PLANTS
             )
         )
         data.add(
-            DiscoverItemModel(
+            Discover(
                 R.drawable.outdoor,
                 getString(R.string.outdoor_plants),
                 Constants.DiscoverItem.OUTDOOR_PLANTS
             )
         )
         data.add(
-            DiscoverItemModel(
+            Discover(
                 R.drawable.care,
                 getString(R.string.plants_care),
                 Constants.DiscoverItem.PLANTS_CARE

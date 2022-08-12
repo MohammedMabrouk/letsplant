@@ -48,4 +48,21 @@
     <string name="plants_care">Plants Care</string>
     <string name="back">back</string>
     <string name="share">share</string>
+    <string name="internet_not_available">Internet not available!</string>
+    <string name="request_failure">Something went wrong.\nPlease try again.</string>
+    <string name="retry">Retry</string>
+    <string name="no_items">No items!</string>
+
+<!--    Plant Details -->
+    <string name="plant_overview">Plant Overview</string>
+    <string name="light">Light</string>
+    <string name="watering">Watering</string>
+    <string name="temperature">Temperature</string>
+    <string name="soil">Soil</string>
+    <string name="propagation">Propagation</string>
+
+<!--    sharing -->
+    <string name="send_to">Send to</string>
+
+
 </resources>

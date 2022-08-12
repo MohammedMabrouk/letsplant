@@ -55,5 +55,23 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/page_title" />
 
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/rv_articles"
+        app:layout_constraintEnd_toEndOf="@id/rv_articles"
+        app:layout_constraintStart_toStartOf="@id/rv_articles"
+        app:layout_constraintTop_toTopOf="@id/rv_articles"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/error_container"
+        layout="@layout/layout_error"
+        app:layout_constraintBottom_toBottomOf="@id/rv_articles"
+        app:layout_constraintEnd_toEndOf="@id/rv_articles"
+        app:layout_constraintStart_toStartOf="@id/rv_articles"
+        app:layout_constraintTop_toTopOf="@id/rv_articles"
+        android:visibility="gone"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

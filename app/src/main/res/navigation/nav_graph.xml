@@ -61,10 +61,31 @@
         android:id="@+id/articles_dest"
         android:name="com.mohamedmabrouk.letsplant.ui.discover.articles.ArticlesFragment"
         android:label="fragment_articles"
-        tools:layout="@layout/fragment_articles" />
+        tools:layout="@layout/fragment_articles" >
+        <action
+            android:id="@+id/action_articles_dest_to_articleDetailsFragment"
+            app:destination="@id/article_details_dest" />
+    </fragment>
     <fragment
         android:id="@+id/plant_details_dest"
         android:name="com.mohamedmabrouk.letsplant.ui.discover.plants.plantDetails.PlantDetailsFragment"
         android:label="fragment_plant_details"
-        tools:layout="@layout/fragment_plant_details" />
+        tools:layout="@layout/fragment_plant_details">
+        <argument
+            android:name="plant"
+            app:argType="com.mohamedmabrouk.letsplant.data.Plant"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+    <fragment
+        android:id="@+id/article_details_dest"
+        android:name="com.mohamedmabrouk.letsplant.ui.discover.articles.articleDetails.ArticleDetailsFragment"
+        android:label="fragment_article_details"
+        tools:layout="@layout/fragment_article_details" >
+        <argument
+            android:name="article"
+            app:argType="com.mohamedmabrouk.letsplant.data.Article"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
 </navigation>

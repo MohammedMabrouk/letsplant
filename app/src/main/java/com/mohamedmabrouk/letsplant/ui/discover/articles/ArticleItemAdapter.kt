@@ -8,10 +8,12 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.mohamedmabrouk.letsplant.R
+import com.mohamedmabrouk.letsplant.data.Article
+import com.squareup.picasso.Picasso
 
 
 class ArticleItemAdapter(
-    private val articleItemsList: List<ArticleItemModel>,
+    private val articleItemsList: List<Article>,
     private val articleItemsClickListener: ArticleItemsClickListener
 ) : RecyclerView.Adapter<ArticleItemAdapter.ViewHolder>() {
 
@@ -24,10 +26,15 @@ class ArticleItemAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val articleItem = articleItemsList[position]
-        holder.imageView.setImageResource(articleItem.img)
+
+        Picasso.get()
+            .load(articleItem.imgUrl)
+            .placeholder(R.drawable.green_tea_placeholder)
+            .into(holder.imageView)
+
         holder.textView.text = articleItem.title
         holder.cardView.setOnClickListener {
-            articleItemsClickListener.onItemClick(position, it)
+            articleItemsClickListener.onItemClick(articleItem, it)
         }
     }
 
@@ -42,6 +49,6 @@ class ArticleItemAdapter(
     }
 
     interface ArticleItemsClickListener {
-        fun onItemClick(position: Int, view: View)
+        fun onItemClick(article: Article, view: View)
     }
 }

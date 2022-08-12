@@ -16,6 +16,16 @@
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toTopOf="@+id/guideline_top" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_plants"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/page_title" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_start"
         android:layout_width="wrap_content"
@@ -44,15 +54,24 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_end="@dimen/fragment_horizontal_guideline_margin" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_plants"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/guideline_bottom"
-        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/page_title" />
+    <ProgressBar
+        android:id="@+id/pb_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@id/rv_plants"
+        app:layout_constraintEnd_toEndOf="@id/rv_plants"
+        app:layout_constraintStart_toStartOf="@id/rv_plants"
+        app:layout_constraintTop_toTopOf="@id/rv_plants"
+        android:visibility="gone"/>
+
+    <include
+        android:id="@+id/error_container"
+        layout="@layout/layout_error"
+        app:layout_constraintBottom_toBottomOf="@id/rv_plants"
+        app:layout_constraintEnd_toEndOf="@id/rv_plants"
+        app:layout_constraintStart_toStartOf="@id/rv_plants"
+        app:layout_constraintTop_toTopOf="@id/rv_plants"
+        android:visibility="gone"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

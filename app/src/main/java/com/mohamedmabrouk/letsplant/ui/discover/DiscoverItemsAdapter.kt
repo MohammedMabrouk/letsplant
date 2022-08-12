@@ -8,10 +8,11 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.mohamedmabrouk.letsplant.R
+import com.mohamedmabrouk.letsplant.data.Discover
 import com.mohamedmabrouk.letsplant.util.Constants
 
 class DiscoverItemsAdapter(
-    private val discoverItemsList: List<DiscoverItemModel>,
+    private val discoverItemsList: List<Discover>,
     private val discoverItemsClickListener: DiscoverItemClickListener
 ) : RecyclerView.Adapter<DiscoverItemsAdapter.ViewHolder>() {
 
