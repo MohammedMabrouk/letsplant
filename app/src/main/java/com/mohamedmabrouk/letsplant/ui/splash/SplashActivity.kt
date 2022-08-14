@@ -5,28 +5,31 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
-import androidx.appcompat.app.AppCompatActivity
-import com.mohamedmabrouk.letsplant.ui.loginRegister.MainActivity
 import com.mohamedmabrouk.letsplant.R
+import com.mohamedmabrouk.letsplant.ui.welcome.WelcomeActivity
+import dagger.android.support.DaggerAppCompatActivity
 
 
-class SplashActivity : AppCompatActivity() {
+class SplashActivity : DaggerAppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
 
         /** Duration of wait **/
-        val SPLASH_DISPLAY_LENGTH = 5000L
+        val SPLASH_DISPLAY_LENGTH = 4000L
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LIGHT_STATUS_BAR
         }
 
         Handler().postDelayed(Runnable { /* Create an Intent that will start the Menu-Activity. */
-            val mainIntent = Intent(this@SplashActivity, MainActivity::class.java)
+            val mainIntent = Intent(this@SplashActivity, WelcomeActivity::class.java)
             this@SplashActivity.startActivity(mainIntent)
             this@SplashActivity.finish()
         }, SPLASH_DISPLAY_LENGTH)
     }
+
+    //todo: check app version
 }
 //todo: base classes
+//todo: add animation to all screens

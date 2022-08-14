@@ -30,10 +30,10 @@
         <action
             android:id="@+id/action_discover_dest_to_articles_dest"
             app:destination="@id/articles_dest"
-            app:enterAnim="@anim/nav_default_enter_anim"
-            app:exitAnim="@anim/nav_default_exit_anim"
-            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim"/>
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"/>
     </fragment>
 
     <fragment
@@ -64,7 +64,11 @@
         tools:layout="@layout/fragment_articles" >
         <action
             android:id="@+id/action_articles_dest_to_articleDetailsFragment"
-            app:destination="@id/article_details_dest" />
+            app:destination="@id/article_details_dest"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out"/>
     </fragment>
     <fragment
         android:id="@+id/plant_details_dest"

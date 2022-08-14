@@ -54,6 +54,8 @@ class ArticleDetailsFragment : Fragment() {
         _binding?.tvArticleTitle!!.text = article.title
         _binding?.tvDetails!!.text = article.details
 
+
+
         Picasso.get()
             .load(article.imgUrl)
             .placeholder(R.drawable.green_tea_placeholder)

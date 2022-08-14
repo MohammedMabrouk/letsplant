@@ -53,7 +53,7 @@
     <string name="retry">Retry</string>
     <string name="no_items">No items!</string>
 
-<!--    Plant Details -->
+    <!--    Plant Details -->
     <string name="plant_overview">Plant Overview</string>
     <string name="light">Light</string>
     <string name="watering">Watering</string>
@@ -61,8 +61,12 @@
     <string name="soil">Soil</string>
     <string name="propagation">Propagation</string>
 
-<!--    sharing -->
+    <!--    sharing -->
     <string name="send_to">Send to</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="select_your_language">Select your language</string>
+    <string name="_continue">Continue</string>
 
 
 </resources>
