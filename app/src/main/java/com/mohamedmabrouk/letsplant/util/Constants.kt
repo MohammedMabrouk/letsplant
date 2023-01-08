@@ -31,4 +31,6 @@ object Constants {
     // others
     const val ACTION_NEW_NOTIFICATION = "ACTION_NEW_NOTIFICATION"
 
+    const val LOGIN_SUCCESS = "LOGIN_SUCCESS"
+    const val LOGIN_FAILED = "LOGIN_FAILED"
 }

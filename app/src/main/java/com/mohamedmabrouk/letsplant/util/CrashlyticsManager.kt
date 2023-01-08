@@ -34,9 +34,6 @@ class CrashlyticsManager @Inject constructor(private val devicePreferences: Devi
         crashlytics.setCustomKey(key, value)
     }
 
-    fun logDebug(log: String, vararg args: Any) {
-        crashlytics.log(String.format(Locale.ENGLISH, log, *args))
-    }
 
     fun log(error: Throwable) {
         // because we can't search using the stack trace message
@@ -75,9 +72,13 @@ class CrashlyticsManager @Inject constructor(private val devicePreferences: Devi
 
     companion object {
         private val crashlytics = FirebaseCrashlytics.getInstance()
-        fun logException(throwable: Throwable,userId:String?=null) {
+        fun logException(throwable: Throwable, userId: String? = null) {
             userId?.let { crashlytics.setUserId(it) }
             crashlytics.recordException(throwable)
+        }
+
+        fun logString(log: String, vararg args: Any) {
+            crashlytics.log(String.format(Locale.ENGLISH, log, *args))
         }
     }
 }

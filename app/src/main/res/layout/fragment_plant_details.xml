@@ -9,10 +9,11 @@
 
     <ImageView
         android:id="@+id/iv_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
         android:contentDescription="@string/back"
         android:elevation="@dimen/margin_16"
+        android:background="@drawable/full_circle"
         android:padding="@dimen/padding_8"
         android:src="@drawable/ic_arrow_back"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
@@ -21,11 +22,12 @@
 
     <ImageView
         android:id="@+id/iv_share"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
         android:layout_gravity="end"
         android:contentDescription="@string/share"
         android:elevation="@dimen/margin_16"
+        android:background="@drawable/full_circle"
         android:padding="@dimen/padding_8"
         android:src="@drawable/ic_share"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
@@ -67,8 +69,7 @@
                 android:padding="@dimen/round_bg_padding"
                 android:text="Potus Plant"
                 android:textColor="@color/green_2"
-                android:textSize="24sp"
-
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="@+id/iv_plant_img"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

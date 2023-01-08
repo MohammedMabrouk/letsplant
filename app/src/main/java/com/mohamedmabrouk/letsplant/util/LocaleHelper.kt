@@ -2,6 +2,7 @@ package com.mohamedmabrouk.letsplant.util
 
 import android.content.Context
 import androidx.preference.PreferenceManager
+import com.yariksoffice.lingver.Lingver
 import java.util.*
 import javax.inject.Inject
 
@@ -34,8 +35,8 @@ class LocaleHelper @Inject constructor(val context: Context) {
 
     fun getSelectedLanguageName(): String {
         return when (getPersistedData(Locale.getDefault().language)) {
-            LANGUAGE_ENGLISH -> LANGUAGE_ENGLISH
-            else -> LANGUAGE_ARABIC
+            LANGUAGE_ARABIC -> LANGUAGE_ARABIC
+            else -> LANGUAGE_ENGLISH
         }
     }
 
@@ -62,10 +63,9 @@ class LocaleHelper @Inject constructor(val context: Context) {
 
     private fun setLocale(context: Context, language: String?) {
         persist(language)
-        //todo: check
 //        val firebaseRemoteConfigManager = FirebaseRemoteConfigManager()
 //        firebaseRemoteConfigManager.reset()
-//        language?.let { Lingver.getInstance().setLocale(context = context, language = it) }
+        language?.let { Lingver.getInstance().setLocale(context = context, language = it) }
     }
 
     companion object {

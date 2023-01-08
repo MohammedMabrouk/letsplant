@@ -7,11 +7,10 @@ import com.mohamedmabrouk.letsplant.ui.discover.plants.PlantsListFragment
 import com.mohamedmabrouk.letsplant.ui.discover.plants.plantDetails.PlantDetailsFragment
 import com.mohamedmabrouk.letsplant.ui.myPlants.MyPlantsFragment
 import com.mohamedmabrouk.letsplant.ui.reminders.RemindersFragment
-import com.mohamedmabrouk.letsplant.ui.reminders.today.TodayFragment
-import com.mohamedmabrouk.letsplant.ui.reminders.upcoming.UpcomingFragment
+import com.mohamedmabrouk.letsplant.ui.reminders.RemindersListFragment
+import com.mohamedmabrouk.letsplant.ui.settings.SettingsFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import com.mohamedmabrouk.letsplant.ui.settings.SettingsFragment as SettingsFragment1
 
 @Module
 abstract class FragmentBuilder {
@@ -37,11 +36,8 @@ abstract class FragmentBuilder {
     abstract fun bindsRemindersFragment(): RemindersFragment
 
     @ContributesAndroidInjector
-    abstract fun bindsTodayFragment(): TodayFragment
+    abstract fun bindsRemindersListFragment(): RemindersListFragment
 
     @ContributesAndroidInjector
-    abstract fun bindsUpcomingFragment(): UpcomingFragment
-
-    @ContributesAndroidInjector
-    abstract fun bindsSettingsFragment(): SettingsFragment1
+    abstract fun bindsSettingsFragment(): SettingsFragment
 }

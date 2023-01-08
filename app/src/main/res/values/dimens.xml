@@ -2,19 +2,23 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="splash_screen_logo_width">100dp</dimen>
     <dimen name="splash_screen_logo_height">100dp</dimen>
-    <dimen name="login_screen_bg_width">200dp</dimen>
-    <dimen name="login_screen_bg_height">150dp</dimen>
+    <dimen name="login_screen_bg_width">150dp</dimen>
+    <dimen name="login_screen_bg_height">100dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
 
-    <dimen name="fragment_vertical_guideline_margin">8dp</dimen>
-    <dimen name="fragment_horizontal_guideline_margin">8dp</dimen>
+    <dimen name="fragment_vertical_guideline_margin">16dp</dimen>
+    <dimen name="fragment_horizontal_guideline_margin">16dp</dimen>
     <dimen name="margin_8">8dp</dimen>
     <dimen name="margin_16">16dp</dimen>
+    <dimen name="margin_24">24dp</dimen>
+    <dimen name="margin_32">32dp</dimen>
     <dimen name="padding_8">8dp</dimen>
+    <dimen name="padding_16">16dp</dimen>
     <dimen name="layout_discover_item_margin">4dp</dimen>
     <dimen name="layout_discover_item_card_elevation">6dp</dimen>
     <dimen name="round_bg_radius">20dp</dimen>
     <dimen name="round_bg_padding">10dp</dimen>
+    <dimen name="icon_size">40dp</dimen>
 </resources>

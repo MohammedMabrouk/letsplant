@@ -1,43 +1,22 @@
 <resources>
     <string name="app_name">Let\'s Plant</string>
-    <string name="title_activity_splash">SplashActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="skip">skip</string>
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="prompt_email">Email</string>
-    <string name="prompt_password">Password</string>
-    <string name="action_sign_in">Sign in or register</string>
-    <string name="action_sign_in_short">Sign in</string>
-    <string name="welcome">"Welcome !"</string>
-    <string name="invalid_username">Not a valid username</string>
-    <string name="invalid_password">Password must be >5 characters</string>
-    <string name="login_failed">"Login failed"</string>
+    <string name="title_activity_login" translatable="false">LoginActivity</string>
+    <string name="prompt_email" translatable="false">Email</string>
+    <string name="prompt_password" translatable="false">Password</string>
+    <string name="action_sign_in" translatable="false">Sign in or register</string>
+    <string name="action_sign_in_short" translatable="false">Sign in</string>
+    <string name="welcome" translatable="false">"Welcome !"</string>
+    <string name="invalid_username" translatable="false">Not a valid username</string>
+    <string name="invalid_password" translatable="false">Password must be >5 characters</string>
+    <string name="login_failed" translatable="false">"Login failed"</string>
     <string name="home">Home</string>
     <string name="my_plants">My Plants</string>
     <string name="settings">Settings</string>
     <string name="discover">Discover</string>
     <string name="today">Today</string>
-    <!-- Preference Titles -->
-    <string name="messages_header">Messages</string>
-    <string name="sync_header">Sync</string>
 
-    <!-- Messages Preferences -->
-    <string name="signature_title">Your signature</string>
-    <string name="reply_title">Default reply action</string>
-
-    <!-- Sync Preferences -->
-    <string name="sync_title">Sync email periodically</string>
-    <string name="attachment_title">Download incoming attachments</string>
-    <string name="attachment_summary_on">Automatically download attachments for incoming emails
-    </string>
-    <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="to_do_list">to-do list</string>
     <string name="reminders">reminders</string>
     <string name="reminders_">Reminders</string>
@@ -63,10 +42,38 @@
 
     <!--    sharing -->
     <string name="send_to">Send to</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="select_your_language">Select your language</string>
+    <string name="language">Language: %s</string>
+    <string name="arabic">العربية</string>
+    <string name="english">English</string>
+    <string name="app_version">App Version: %s</string>
     <string name="_continue">Continue</string>
-
-
+    <string name="email">Email</string>
+    <string name="register">Register</string>
+    <string name="password">Password</string>
+    <string name="empty_email_msg">Enter your email!</string>
+    <string name="wrong_email_msg">Wrong email!</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="empty_password_msg">Enter your password!</string>
+    <string name="password_length_msg">Password should be at least 6 characters!</string>
+    <string name="confirm_password_not_match">Password is not matching!</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="login">Login</string>
+    <string name="no_account">No account?</string>
+    <string name="general">General</string>
+    <string name="cancel">Cancel</string>
+    <string name="confirm">Confirm</string>
+    <string name="logout">Logout</string>
+    <string name="logout_confirmation">Are you sure you want to logout?</string>
+    <string name="add_new_plant">Add new plant</string>
+    <string name="plant_name">Plant Name</string>
+    <string name="add_plant">Add Plant</string>
+    <string name="repeat_watering_title">Repeat watering after\u0020</string>
+    <string name="repeat_fertilize_title">Repeat fertilizing after\u0020</string>
+    <string name="days">\u0020days.</string>
+    <string name="repeat_watering_title_">Water every:\u0020\n</string>
+    <string name="repeat_fertilize_title_">Fertilize every:\u0020\n</string>
+    <string name="water_plant_">Water plant: %s</string>
+    <string name="fertilize_plant_">Fertilize plant: %s</string>
+    <string name="mark_as_done">Mark as done</string>
 </resources>

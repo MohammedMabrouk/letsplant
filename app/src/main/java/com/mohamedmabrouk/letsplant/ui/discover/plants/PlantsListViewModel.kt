@@ -31,7 +31,6 @@ class PlantsListViewModel @Inject constructor(application : Application) : Andro
 
 
     fun getPlants(plantType: Int, languageCode: String){
-        // todo: check on plant type
         _dataLoading.value = true
         _empty.value = false
         _error.value = null

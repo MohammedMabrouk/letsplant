@@ -1,0 +1,71 @@
+<resources>
+    <string name="app_name">يالا نزرع</string>
+
+    <string name="skip">تخطي</string>
+
+    <string name="home">الرئيسية</string>
+    <string name="my_plants">نباتاتي</string>
+    <string name="settings">الإعدادات</string>
+    <string name="discover">أكتشف</string>
+    <string name="today">اليوم</string>
+
+    <string name="to_do_list">to-do list</string>
+    <string name="reminders">التنبيهات</string>
+    <string name="reminders_">التنبيهات</string>
+    <string name="upcoming">القادمة</string>
+    <string name="add_reminder">إضافة تنبيه</string>
+    <string name="indoor_plants">النباتات الداخلية</string>
+    <string name="outdoor_plants">النباتات الخارجية</string>
+    <string name="plants_care">العناية بالنباتات</string>
+    <string name="back">رجوع</string>
+    <string name="share">مشاركة</string>
+    <string name="internet_not_available">لا يوجد إتصال بالإنترنت!</string>
+    <string name="request_failure">حدث خطأ\nحاول مرة أخرى</string>
+    <string name="retry">إعادة المحاولة</string>
+    <string name="no_items">لا يوجد أي عنصر</string>
+
+    <!--    Plant Details -->
+    <string name="plant_overview">تفاصيل النبات</string>
+    <string name="light">الإضاءة</string>
+    <string name="watering">الري</string>
+    <string name="temperature">الحرارة</string>
+    <string name="soil">التربة</string>
+    <string name="propagation">الإكثار</string>
+
+    <!--    sharing -->
+    <string name="send_to">إرسال الى</string>
+    <string name="select_your_language">أختر اللغة</string>
+    <string name="language">اللغة: %s</string>
+    <string name="arabic">العربية</string>
+    <string name="english">English</string>
+    <string name="app_version">إصدار التطبيق: %s</string>
+    <string name="_continue">متابعة</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="register">تسجيل</string>
+    <string name="password">كلمة المرور</string>
+    <string name="empty_email_msg">أدخل البريد الإلكتروني!</string>
+    <string name="wrong_email_msg">بريد إلكتروني غير صحيح!</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="empty_password_msg">أدخل كلمة المرور!</string>
+    <string name="password_length_msg">يجب ألا تقل كلمة المرور عن ٦ حروف!</string>
+    <string name="confirm_password_not_match">كلمة المرور غير متطابقة!</string>
+    <string name="already_have_an_account">لديك حساب بالفعل؟</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="no_account">ليس لديك حساب؟</string>
+    <string name="general">عام</string>
+    <string name="cancel">الغاء</string>
+    <string name="confirm">تأكيد</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="logout_confirmation">هل أنت متأكد من الخروج؟</string>
+    <string name="add_new_plant">إضافة نبات جديد</string>
+    <string name="plant_name">أسم النبات</string>
+    <string name="add_plant">إضافة نبات</string>
+    <string name="repeat_watering_title">تكرار روي النبات بعد\u0020</string>
+    <string name="repeat_fertilize_title">تكرار التسميد بعد\u0020</string>
+    <string name="days">\u0020يوم.</string>
+    <string name="repeat_watering_title_">يروى كل:\n</string>
+    <string name="repeat_fertilize_title_">التسميد كل:\n</string>
+    <string name="water_plant_">ري نبات: %s</string>
+    <string name="fertilize_plant_">تسميد نبات: %s</string>
+    <string name="mark_as_done">تمت المهمة</string>
+</resources>

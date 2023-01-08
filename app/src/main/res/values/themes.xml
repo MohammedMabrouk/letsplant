@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/green_1</item>
         <!-- Customize your theme here. -->
+        <item name="android:preferenceStyle">@style/PreferenceTheme</item>
     </style>
 
     <style name="Theme.Letsplant.NoActionBar">
@@ -22,4 +23,9 @@
     <style name="Theme.Letsplant.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Letsplant.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="PreferenceTheme" parent="@style/Preference.PreferenceScreen">
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+        <item name="android:background">@color/gray_1</item>
+    </style>
 </resources>

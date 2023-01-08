@@ -6,7 +6,6 @@
     android:id="@+id/ll_main"
     android:padding="8dp"
     android:background="?android:attr/selectableItemBackground"
-    android:gravity="center_vertical"
     android:orientation="horizontal">
 
     <RadioButton
@@ -18,21 +17,21 @@
 
     <ImageView
         android:id="@+id/language_img"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
         android:layout_gravity="center_vertical"
         android:src="@drawable/ic_ar"/>
 
     <TextView
         android:id="@+id/language_text"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginStart="@dimen/margin_16"
         android:layout_marginEnd="@dimen/margin_16"
+        android:gravity="center"
         android:textAllCaps="true"
-        android:textAlignment="center"
         android:clickable="false"
-        android:textSize="18sp"
+        android:textSize="14sp"
         android:textColor="@color/green_3"
         tools:text="dummy...3"/>
 

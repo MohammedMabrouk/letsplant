@@ -12,7 +12,6 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.mohamedmabrouk.letsplant.R
 import com.mohamedmabrouk.letsplant.databinding.FragmentRemindersBinding
-import com.mohamedmabrouk.letsplant.ui.reminders.today.TodayFragment
 
 class RemindersFragment : Fragment() {
     companion object {
@@ -70,7 +69,7 @@ class RemindersFragment : Fragment() {
 
         override fun createFragment(position: Int): Fragment {
             // Return a NEW fragment instance in createFragment(int)
-            val fragment = TodayFragment()
+            val fragment = RemindersListFragment()
             fragment.arguments = Bundle().apply {
                 // Our object is just an integer :-P
                 putInt(ARG_OBJECT, position)
