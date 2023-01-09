@@ -1,13 +1,13 @@
-package com.mohamedmabrouk.letsplant.dependencies.component
+package com.mohamedmabrouk.letsplant.di.component
 
 import android.app.Application
 import com.mohamedmabrouk.letsplant.application.MyApplication
-import com.mohamedmabrouk.letsplant.dependencies.buider.ActivityBuilder
-import com.mohamedmabrouk.letsplant.dependencies.buider.ServiceBuilder
-import com.mohamedmabrouk.letsplant.dependencies.module.AppModule
-import com.mohamedmabrouk.letsplant.dependencies.module.BroadcastModule
-import com.mohamedmabrouk.letsplant.dependencies.module.NetworkModule
-import com.mohamedmabrouk.letsplant.dependencies.module.WorkerModule
+import com.mohamedmabrouk.letsplant.di.buider.ActivityBuilder
+import com.mohamedmabrouk.letsplant.di.buider.ServiceBuilder
+import com.mohamedmabrouk.letsplant.di.module.AppModule
+import com.mohamedmabrouk.letsplant.di.module.BroadcastModule
+import com.mohamedmabrouk.letsplant.di.module.NetworkModule
+import com.mohamedmabrouk.letsplant.di.module.WorkerModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector

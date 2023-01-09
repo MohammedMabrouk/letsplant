@@ -35,6 +35,7 @@ class RegisterFragment : Fragment(), OnCompleteListener<AuthResult> {
     // onDestroyView.
     private val binding get() = _binding!!
 
+
     private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(

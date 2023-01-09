@@ -1,4 +1,4 @@
-package com.mohamedmabrouk.letsplant.dependencies.buider
+package com.mohamedmabrouk.letsplant.di.buider
 
 import com.mohamedmabrouk.letsplant.ui.discover.DiscoverFragment
 import com.mohamedmabrouk.letsplant.ui.discover.articles.ArticlesFragment

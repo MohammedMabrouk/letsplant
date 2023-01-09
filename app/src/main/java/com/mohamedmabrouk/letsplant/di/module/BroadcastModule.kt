@@ -1,4 +1,4 @@
-package com.mohamedmabrouk.letsplant.dependencies.module
+package com.mohamedmabrouk.letsplant.di.module
 
 import dagger.Module
 

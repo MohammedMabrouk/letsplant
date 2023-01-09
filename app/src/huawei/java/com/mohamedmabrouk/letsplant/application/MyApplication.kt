@@ -8,8 +8,8 @@ import com.huawei.hms.analytics.HiAnalytics
 import com.huawei.hms.analytics.HiAnalyticsInstance
 import com.huawei.hms.analytics.HiAnalyticsTools
 import com.huawei.hms.analytics.type.ReportPolicy
-import com.mohamedmabrouk.letsplant.dependencies.component.AppComponent
-import com.mohamedmabrouk.letsplant.dependencies.component.DaggerAppComponent
+import com.mohamedmabrouk.letsplant.di.component.AppComponent
+import com.mohamedmabrouk.letsplant.di.component.DaggerAppComponent
 import com.mohamedmabrouk.letsplant.util.LocaleHelper
 import com.mohamedmabrouk.letsplant.workManager.RemindersWorker
 import com.yariksoffice.lingver.Lingver

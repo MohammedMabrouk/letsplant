@@ -1,8 +1,8 @@
 package com.mohamedmabrouk.letsplant.application
 
 import com.google.firebase.FirebaseApp
-import com.mohamedmabrouk.letsplant.dependencies.component.AppComponent
-import com.mohamedmabrouk.letsplant.dependencies.component.DaggerAppComponent
+import com.mohamedmabrouk.letsplant.di.component.AppComponent
+import com.mohamedmabrouk.letsplant.di.component.DaggerAppComponent
 import com.mohamedmabrouk.letsplant.util.LocaleHelper
 import com.yariksoffice.lingver.Lingver
 import dagger.android.AndroidInjector
