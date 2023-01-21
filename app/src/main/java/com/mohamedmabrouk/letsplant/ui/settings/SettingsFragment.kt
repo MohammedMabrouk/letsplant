@@ -16,7 +16,9 @@ import com.mohamedmabrouk.letsplant.ui.welcome.WelcomeActivity
 import com.mohamedmabrouk.letsplant.util.LocaleHelper
 import com.mohamedmabrouk.letsplant.util.ui.DialogUtils
 import com.mohamedmabrouk.letsplant.util.ui.LanguageSelectListener
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class SettingsFragment : Fragment() {
 
     lateinit var localeHelper: LocaleHelper

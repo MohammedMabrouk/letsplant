@@ -25,7 +25,9 @@ import com.mohamedmabrouk.letsplant.ui.home.HomeActivity
 import com.mohamedmabrouk.letsplant.util.Constants
 import com.mohamedmabrouk.letsplant.util.CrashlyticsManager
 import com.mohamedmabrouk.letsplant.util.hideKeyboard
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class LoginFragment : Fragment(), OnCompleteListener<AuthResult> {
     lateinit var devicePreferences: DevicePreferences
     lateinit var analyticsManager: AnalyticsManager

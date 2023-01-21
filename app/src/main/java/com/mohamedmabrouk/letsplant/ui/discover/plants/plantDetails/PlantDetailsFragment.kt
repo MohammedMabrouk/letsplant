@@ -12,7 +12,9 @@ import com.mohamedmabrouk.letsplant.data.Plant
 import com.mohamedmabrouk.letsplant.databinding.FragmentPlantDetailsBinding
 import com.mohamedmabrouk.letsplant.util.ShareUtils
 import com.squareup.picasso.Picasso
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PlantDetailsFragment : Fragment() {
 
     companion object {

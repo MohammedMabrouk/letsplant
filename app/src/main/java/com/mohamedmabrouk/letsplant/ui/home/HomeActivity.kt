@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
@@ -13,10 +14,11 @@ import com.mohamedmabrouk.letsplant.R
 import com.mohamedmabrouk.letsplant.firebase.FirebaseManager
 import com.mohamedmabrouk.letsplant.firebase.RealtimeDbManager
 import com.mohamedmabrouk.letsplant.util.LocaleHelper
-import dagger.android.support.DaggerAppCompatActivity
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-class HomeActivity : DaggerAppCompatActivity() {
+@AndroidEntryPoint
+class HomeActivity : AppCompatActivity() {
     private val TAG = "HomeActivity"
 
     @Inject

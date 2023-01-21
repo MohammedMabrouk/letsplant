@@ -15,7 +15,6 @@ import com.mohamedmabrouk.letsplant.util.ResourceManager
 import dagger.Module
 import javax.inject.Inject
 
-@Module
 class ArticlesRemoteDataSource @Inject constructor(val context: Context) : ArticlesDataSource {
     private val TAG = "ArticlesRemoteDS"
 

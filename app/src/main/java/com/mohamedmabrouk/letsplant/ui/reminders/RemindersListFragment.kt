@@ -17,7 +17,9 @@ import com.mohamedmabrouk.letsplant.ui.reminders.RemindersFragment.Companion.ARG
 import com.mohamedmabrouk.letsplant.util.DateTimeUtils
 import com.mohamedmabrouk.letsplant.util.hideLoadingIndicator
 import com.mohamedmabrouk.letsplant.util.showLoadingIndicator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RemindersListFragment : Fragment(), RemindersListAdapter.ReminderClickListener {
 
     private val TAG = "RemindersListFragment"

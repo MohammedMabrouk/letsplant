@@ -12,7 +12,9 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.mohamedmabrouk.letsplant.R
 import com.mohamedmabrouk.letsplant.databinding.FragmentRemindersBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RemindersFragment : Fragment() {
     companion object {
         fun newInstance() = RemindersFragment()

@@ -7,6 +7,7 @@ plugins {
     id 'kotlin-kapt'
     id 'org.jetbrains.kotlin.android.extensions'
     id 'com.huawei.agconnect'
+    id 'dagger.hilt.android.plugin'
 }
 
 ext {
@@ -17,23 +18,23 @@ ext {
     PROD_ENV = "2"
 }
 
-//// Create a variable called keystorePropertiesFile, and initialize it to your
-//// keystore.properties file, in the rootProject folder.
-//def keystorePropertiesFile = rootProject.file("keystore.properties")
-//
-//// Initialize a new Properties() object called keystoreProperties.
-//def keystoreProperties = new Properties()
-//
-//// Load your keystore.properties file into the keystoreProperties object.
-//keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+// Create a variable called keystorePropertiesFile, and initialize it to your
+// keystore.properties file, in the rootProject folder.
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+
+// Initialize a new Properties() object called keystoreProperties.
+def keystoreProperties = new Properties()
+
+// Load your keystore.properties file into the keystoreProperties object.
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
 android {
-    compileSdk 33
+    compileSdk rootProject.compileSdkVersion
 
     defaultConfig {
         applicationId "eg.com.letsplant"
-        minSdk 23
-        targetSdk 33
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
         versionCode buildVersionCode()
         versionName buildVersionName()
 
@@ -57,9 +58,9 @@ android {
             testCoverageEnabled = true
 //            applicationIdSuffix '.qa'
             buildConfigField(DATA_TYPE_FOR_BUILD_ENVIRONMENT, BUILD_ENVIRONMENT, QA_ENV)
-            //todo: add firebase
-//            buildConfigField 'String', 'FIREBASE_TOPIC', '"ke-all-customers-qa"'
-//            buildConfigField 'String', 'STORE', '"google_play"'
+            //todo: add firebase topic
+            buildConfigField 'String', 'FIREBASE_TOPIC', '"lets-plant-all-customers-qa"'
+            buildConfigField 'String', 'STORE', '"qa"'
 //            signingConfig signingConfigs.signedAPK
             shrinkResources false
             minifyEnabled false
@@ -70,15 +71,14 @@ android {
 //                instrumentationEnabled false
 //            }
         }
-        //todo: undo minifyEnabled --
         release {
             buildConfigField(DATA_TYPE_FOR_BUILD_ENVIRONMENT, BUILD_ENVIRONMENT, PROD_ENV)
-//            buildConfigField 'String', 'FIREBASE_TOPIC', '"ke-all-customers"'
-//            buildConfigField 'String', 'STORE', '"google_play"'
+            buildConfigField 'String', 'FIREBASE_TOPIC', '"lets-plant-all-customers"'
+            buildConfigField 'String', 'STORE', '"production"'
             debuggable false
             shrinkResources false
             // Enable R8 for the build type.
-            minifyEnabled false
+            minifyEnabled true
             // Supply the configuration detailed below.
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
 //            signingConfig signingConfigs.signedAPK
@@ -115,28 +115,28 @@ android {
 }
 
 dependencies {
-    //todo: group version variables
-    implementation "androidx.core:core-ktx:1.9.0"
-    implementation "androidx.appcompat:appcompat:1.5.1"
-    implementation "com.google.android.material:material:1.7.0"
-    implementation "androidx.constraintlayout:constraintlayout:2.1.4"
-    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
-    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
-    implementation "androidx.annotation:annotation:$annotation_version"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    implementation "androidx.legacy:legacy-support-v4:1.0.0"
-    implementation "androidx.preference:preference-ktx:$preference_version"
+    // App Dependencies
+    implementation "androidx.core:core-ktx:$androidXCoreVersion"
+    implementation "androidx.appcompat:appcompat:$androidAppCompatVersion"
+    implementation "com.google.android.material:material:$materialVersion"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintVersion"
+    implementation "androidx.annotation:annotation:$androidXAnnotations"
+    implementation "com.jakewharton.timber:timber:$timberVersion"
+
+    // Firebase
     implementation 'com.google.firebase:firebase-messaging:23.1.1'
     implementation 'com.google.firebase:firebase-auth-ktx:21.1.0'
     implementation 'com.google.android.gms:play-services-analytics:18.0.2'
-    testImplementation "junit:junit:4.13.2"
-    androidTestImplementation "androidx.test.ext:junit:1.1.5"
-    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
-
 
     // Import the Firebase BoM
     implementation platform('com.google.firebase:firebase-bom:30.3.1')
+
+    // Architecture Components
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$archLifecycleVersion"
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+    implementation "androidx.work:work-runtime-ktx:2.7.1"
+
 
     // Add the dependency for the Firebase SDK for Google Analytics
     // When using the BoM, don't specify versions in Firebase dependencies
@@ -152,33 +152,23 @@ dependencies {
     huaweiImplementation 'com.huawei.hms:push:6.1.0.300'
     huaweiImplementation 'com.huawei.hms:hianalytics:6.7.0.300'
 
-    // Dagger Android #https://github.com/iammert/dagger-android-injection
-    implementation "com.google.dagger:dagger-android:$dagger_version"
-    implementation "com.google.dagger:dagger-android-support:$dagger_version"
-    // if you use the support libraries
-    implementation "com.google.dagger:dagger:$dagger_version"
-    kapt "com.google.dagger:dagger-android-processor:$dagger_version"
-    kapt "com.google.dagger:dagger-compiler:$dagger_version"
+    // Hilt
+    implementation "com.google.dagger:hilt-android:$hiltVersion"
+    kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
 
+    //Picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
 
     // Lingver is a library to manage your application locale and language
     implementation "com.github.YarikSOffice:lingver:1.3.0"
 
     // Room DB
-    implementation("androidx.room:room-ktx:$room_version")
-    implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
+    implementation("androidx.room:room-ktx:$roomVersion")
+    implementation "androidx.room:room-runtime:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
 
-    // work manager
-    implementation "androidx.work:work-runtime-ktx:2.7.1"
-
-//    implementation 'com.android.support:multidex:2.0.1'
-//    implementation "androidx.core:core-ktx:+"
-//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    // Testing
+    testImplementation "junit:junit:$junitVersion"
+    androidTestImplementation "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espressoVersion"
 }
-repositories {
-    mavenCentral()
-}
-
-//todo: handle versioning

@@ -5,12 +5,13 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.mohamedmabrouk.letsplant.R
 import com.mohamedmabrouk.letsplant.ui.welcome.WelcomeActivity
-import dagger.android.support.DaggerAppCompatActivity
+import dagger.hilt.android.AndroidEntryPoint
 
-
-class SplashActivity : DaggerAppCompatActivity() {
+@AndroidEntryPoint
+class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)

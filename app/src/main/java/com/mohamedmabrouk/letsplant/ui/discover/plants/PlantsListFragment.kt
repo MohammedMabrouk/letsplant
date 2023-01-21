@@ -17,7 +17,9 @@ import com.mohamedmabrouk.letsplant.util.Constants
 import com.mohamedmabrouk.letsplant.util.LocaleHelper
 import com.mohamedmabrouk.letsplant.util.hideLoadingIndicator
 import com.mohamedmabrouk.letsplant.util.showLoadingIndicator
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class PlantsListFragment : Fragment(), PlantItemsAdapter.PlantItemsClickListener {
 
     companion object {

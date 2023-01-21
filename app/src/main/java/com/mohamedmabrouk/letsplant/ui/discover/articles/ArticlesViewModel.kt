@@ -1,16 +1,18 @@
 package com.mohamedmabrouk.letsplant.ui.discover.articles
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.mohamedmabrouk.letsplant.data.Article
 import com.mohamedmabrouk.letsplant.data.source.ArticlesDataSource
 import com.mohamedmabrouk.letsplant.data.source.remote.ArticlesRemoteDataSource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 
-class ArticlesViewModel @Inject constructor(application : Application) : AndroidViewModel(application) {
+@HiltViewModel
+class ArticlesViewModel @Inject constructor(val application: Application): ViewModel() {
 
     val repository: ArticlesRepository = ArticlesRepository(ArticlesRemoteDataSource(application))
 

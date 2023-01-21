@@ -15,15 +15,16 @@ import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import com.mohamedmabrouk.letsplant.R
 import com.mohamedmabrouk.letsplant.data.DevicePreferences
 import com.mohamedmabrouk.letsplant.databinding.FragmentRegisterBinding
 import com.mohamedmabrouk.letsplant.ui.home.HomeActivity
 import com.mohamedmabrouk.letsplant.util.CrashlyticsManager
 import com.mohamedmabrouk.letsplant.util.hideKeyboard
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class RegisterFragment : Fragment(), OnCompleteListener<AuthResult> {
 
     lateinit var devicePreferences: DevicePreferences
@@ -36,14 +37,15 @@ class RegisterFragment : Fragment(), OnCompleteListener<AuthResult> {
     private val binding get() = _binding!!
 
 
-    private lateinit var auth: FirebaseAuth
+    @Inject
+    lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         devicePreferences = DevicePreferences(activity as Context)
-        auth = Firebase.auth
+//        auth = Firebase.auth
 
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
 

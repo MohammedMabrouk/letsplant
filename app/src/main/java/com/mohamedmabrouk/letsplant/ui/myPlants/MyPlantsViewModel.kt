@@ -1,19 +1,22 @@
 package com.mohamedmabrouk.letsplant.ui.myPlants
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mohamedmabrouk.letsplant.data.UserPlant
 import com.mohamedmabrouk.letsplant.data.source.local.DbUtils
 import com.mohamedmabrouk.letsplant.data.source.local.getDatabase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class MyPlantsViewModel(application: Application) : AndroidViewModel(application) {
+@HiltViewModel
+class MyPlantsViewModel @Inject constructor(val application: Application) : ViewModel() {
     private val database = getDatabase(application)
 
     private val _items = MutableLiveData<MutableList<UserPlant>>()

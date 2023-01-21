@@ -11,8 +11,9 @@ import androidx.navigation.fragment.findNavController
 import com.mohamedmabrouk.letsplant.R
 import com.mohamedmabrouk.letsplant.databinding.FragmentLanguageBinding
 import com.mohamedmabrouk.letsplant.util.LocaleHelper
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class LanguageFragment : Fragment() {
 
     lateinit var localeHelper: LocaleHelper

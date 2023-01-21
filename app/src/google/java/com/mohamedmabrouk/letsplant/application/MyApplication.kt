@@ -1,29 +1,28 @@
 package com.mohamedmabrouk.letsplant.application
 
+import android.app.Application
 import com.google.firebase.FirebaseApp
-import com.mohamedmabrouk.letsplant.di.component.AppComponent
-import com.mohamedmabrouk.letsplant.di.component.DaggerAppComponent
+import com.mohamedmabrouk.letsplant.BuildConfig
 import com.mohamedmabrouk.letsplant.util.LocaleHelper
 import com.yariksoffice.lingver.Lingver
-import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
+import dagger.hilt.android.HiltAndroidApp
+import timber.log.Timber
 import javax.inject.Inject
 
-class MyApplication : DaggerApplication(){
+@HiltAndroidApp
+class MyApplication : Application(){
 
     @Inject
     lateinit var localeHelper: LocaleHelper
 
 
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        val appComponent: AppComponent = DaggerAppComponent.builder().application(this).build()
-        appComponent.inject(this)
-        return appComponent
-    }
-
     override fun onCreate() {
         FirebaseApp.initializeApp(this)
         super.onCreate()
+        if (BuildConfig.DEBUG) {
+            Timber.plant(Timber.DebugTree())
+        }
+
         instance = this
 
 //        FirebaseMessaging.getInstance().subscribeToTopic(BuildConfig.FIREBASE_TOPIC)

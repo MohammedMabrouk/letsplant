@@ -1,5 +1,6 @@
 package com.mohamedmabrouk.letsplant.application
 
+import android.app.Application
 import android.os.Build
 import androidx.work.*
 import com.google.android.gms.analytics.GoogleAnalytics
@@ -21,18 +22,14 @@ import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
-class MyApplication : DaggerApplication(){
+@HiltAndroidApp
+class MyApplication : Application(){
 
     @Inject
     lateinit var localeHelper: LocaleHelper
 
     val applicationScope = CoroutineScope(Dispatchers.Default)
 
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        val appComponent: AppComponent = DaggerAppComponent.builder().application(this).build()
-        appComponent.inject(this)
-        return appComponent
-    }
 
     override fun onCreate() {
         FirebaseApp.initializeApp(this)

@@ -15,7 +15,9 @@ import com.mohamedmabrouk.letsplant.util.hideLoadingIndicator
 import com.mohamedmabrouk.letsplant.util.showLoadingIndicator
 import com.mohamedmabrouk.letsplant.util.ui.AddNewPlantListener
 import com.mohamedmabrouk.letsplant.util.ui.DialogUtils
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MyPlantsFragment : Fragment(), MyPlantsAdapter.UserPlantClickListener {
 
 

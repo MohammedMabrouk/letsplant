@@ -17,17 +17,12 @@ import com.mohamedmabrouk.letsplant.firebase.FirebaseManager
 import com.mohamedmabrouk.letsplant.ui.splash.SplashActivity
 import com.mohamedmabrouk.letsplant.util.Constants
 import com.mohamedmabrouk.letsplant.util.EventKeys
-import dagger.android.AndroidInjection
 import javax.inject.Inject
 
 class MessagingService : FirebaseMessagingService() {
     @Inject
     lateinit var fireBaseManager: FirebaseManager
 
-    override fun onCreate() {
-        AndroidInjection.inject(this)
-        super.onCreate()
-    }
 
     /**
      * Called if the FCM registration token is updated. This may occur if the security of

@@ -1,15 +1,18 @@
 package com.mohamedmabrouk.letsplant.ui.discover.plants
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.mohamedmabrouk.letsplant.data.Plant
 import com.mohamedmabrouk.letsplant.data.source.PlantsDataSource
 import com.mohamedmabrouk.letsplant.data.source.remote.PlantsRemoteDataSource
+import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
-class PlantsListViewModel @Inject constructor(application : Application) : AndroidViewModel(application) {
+
+@HiltViewModel
+class PlantsListViewModel @Inject constructor(application : Application) : ViewModel() {
 
     val repository: PlantsRepository = PlantsRepository(PlantsRemoteDataSource(application))
 

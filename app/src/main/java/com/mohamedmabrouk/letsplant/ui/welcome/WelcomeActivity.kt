@@ -9,7 +9,9 @@ import androidx.navigation.fragment.NavHostFragment
 import com.mohamedmabrouk.letsplant.R
 import com.mohamedmabrouk.letsplant.data.DevicePreferences
 import com.mohamedmabrouk.letsplant.ui.home.HomeActivity
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class WelcomeActivity : AppCompatActivity() {
 
     lateinit var devicePreferences: DevicePreferences

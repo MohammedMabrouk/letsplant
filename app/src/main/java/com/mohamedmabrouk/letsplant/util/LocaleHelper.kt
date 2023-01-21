@@ -1,7 +1,7 @@
 package com.mohamedmabrouk.letsplant.util
 
 import android.content.Context
-import androidx.preference.PreferenceManager
+import android.preference.PreferenceManager
 import com.yariksoffice.lingver.Lingver
 import java.util.*
 import javax.inject.Inject

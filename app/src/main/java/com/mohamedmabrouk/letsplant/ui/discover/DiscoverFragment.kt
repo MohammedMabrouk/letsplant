@@ -13,7 +13,9 @@ import com.mohamedmabrouk.letsplant.R
 import com.mohamedmabrouk.letsplant.data.Discover
 import com.mohamedmabrouk.letsplant.databinding.FragmentDiscoverBinding
 import com.mohamedmabrouk.letsplant.util.Constants
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class DiscoverFragment : Fragment(), DiscoverItemsAdapter.DiscoverItemClickListener {
 
     companion object {

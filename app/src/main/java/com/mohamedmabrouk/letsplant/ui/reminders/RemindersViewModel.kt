@@ -1,20 +1,23 @@
 package com.mohamedmabrouk.letsplant.ui.reminders
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mohamedmabrouk.letsplant.data.Reminder
 import com.mohamedmabrouk.letsplant.data.source.local.ReminderType
 import com.mohamedmabrouk.letsplant.data.source.local.getDatabase
 import com.mohamedmabrouk.letsplant.util.DateTimeUtils
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import java.util.*
+import javax.inject.Inject
 
-class RemindersViewModel(application: Application) : AndroidViewModel(application) {
+@HiltViewModel
+class RemindersViewModel@Inject constructor(val application: Application) : ViewModel() {
     private val database = getDatabase(application)
 
     private val _items = MutableLiveData<MutableList<Reminder>>()
