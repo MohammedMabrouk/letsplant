@@ -1,7 +1,9 @@
 package com.mohamedmabrouk.letsplant.util
 
 import java.text.SimpleDateFormat
-import java.util.*
+import java.util.Calendar
+import java.util.Date
+import java.util.Locale
 
 object DateTimeUtils {
     const val DATE_FORMAT = "yyyy-MM-dd"

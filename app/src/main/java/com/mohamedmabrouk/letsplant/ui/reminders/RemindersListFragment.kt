@@ -14,7 +14,6 @@ import com.mohamedmabrouk.letsplant.data.source.local.ReminderStatus
 import com.mohamedmabrouk.letsplant.databinding.FragmentRemindersListBinding
 import com.mohamedmabrouk.letsplant.ui.myPlants.MyPlantsFragment
 import com.mohamedmabrouk.letsplant.ui.reminders.RemindersFragment.Companion.ARG_OBJECT
-import com.mohamedmabrouk.letsplant.util.DateTimeUtils
 import com.mohamedmabrouk.letsplant.util.hideLoadingIndicator
 import com.mohamedmabrouk.letsplant.util.showLoadingIndicator
 import dagger.hilt.android.AndroidEntryPoint
@@ -101,8 +100,8 @@ class RemindersListFragment : Fragment(), RemindersListAdapter.ReminderClickList
     override fun onResume() {
         super.onResume()
         when (reminderStatus) {
-            ReminderStatus.TODAY -> viewModel.getTodayReminders(DateTimeUtils.getCurrentDate())
-            else -> viewModel.getUpcomingReminders(DateTimeUtils.getCurrentDate())
+            ReminderStatus.TODAY -> viewModel.getTodayReminders()
+            else -> viewModel.getUpcomingReminders()
         }
     }
 }

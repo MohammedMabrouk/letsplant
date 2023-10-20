@@ -1,24 +1,26 @@
 package com.mohamedmabrouk.letsplant.ui.reminders
 
-import android.app.Application
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mohamedmabrouk.letsplant.data.Reminder
+import com.mohamedmabrouk.letsplant.data.source.local.LetsPlantDatabase
 import com.mohamedmabrouk.letsplant.data.source.local.ReminderType
-import com.mohamedmabrouk.letsplant.data.source.local.getDatabase
 import com.mohamedmabrouk.letsplant.util.DateTimeUtils
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.util.*
+import java.util.Date
 import javax.inject.Inject
 
 @HiltViewModel
-class RemindersViewModel@Inject constructor(val application: Application) : ViewModel() {
-    private val database = getDatabase(application)
+class RemindersViewModel@Inject constructor(
+    private val database: LetsPlantDatabase,
+    private val todayDate: Date
+) : ViewModel() {
+    // todo: add db instanec to hilt
 
     private val _items = MutableLiveData<MutableList<Reminder>>()
     val items: LiveData<MutableList<Reminder>>
@@ -37,7 +39,7 @@ class RemindersViewModel@Inject constructor(val application: Application) : View
         get() = _empty
 
 
-    fun getTodayReminders(todayDate: Date) {
+    fun getTodayReminders() {
         viewModelScope.launch {
             _dataLoading.value = true
             _empty.value = false
@@ -53,7 +55,7 @@ class RemindersViewModel@Inject constructor(val application: Application) : View
         }
     }
 
-    fun getUpcomingReminders(todayDate: Date) {
+    fun getUpcomingReminders() {
         viewModelScope.launch {
             _dataLoading.value = true
             _empty.value = false

@@ -14,7 +14,7 @@ import java.util.*
 interface UserPlantsDao {
 
     @Query("SELECT * FROM user_plant")
-    suspend fun getAllUserPlants(): MutableList<UserPlant>
+    suspend fun getAllPlants(): MutableList<UserPlant>
 
 //    @Query("SELECT * FROM user_plant ORDER BY closeApproachDate DESC")
 //    fun getAllAsteroids(): LiveData<List<UserPlant>>
@@ -109,7 +109,7 @@ object DbUtils {
     suspend fun refreshReminders(letsPlantDatabase: LetsPlantDatabase) {
         withContext(Dispatchers.IO) {
             try {
-                val plants = letsPlantDatabase.userPlantsDao.getAllUserPlants()
+                val plants = letsPlantDatabase.userPlantsDao.getAllPlants()
                 val remindersList = ArrayList<Reminder>()
 
                 for (plant in plants) {

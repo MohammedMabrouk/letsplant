@@ -38,7 +38,7 @@ class MyPlantsViewModel @Inject constructor(val application: Application) : View
     fun getUserPlants() {
         viewModelScope.launch {
             _dataLoading.value = true
-            val plants = database.userPlantsDao.getAllUserPlants()
+            val plants = database.userPlantsDao.getAllPlants()
             if (plants.isNotEmpty()) {
                 _dataLoading.value = false
                 _empty.value = false

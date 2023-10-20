@@ -5,16 +5,20 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.mohamedmabrouk.letsplant.application.MyApplication
+import com.mohamedmabrouk.letsplant.data.source.local.LetsPlantDatabase
+import com.mohamedmabrouk.letsplant.data.source.local.getDatabase
+import com.mohamedmabrouk.letsplant.notification.RemindersNotificationHandler
+import com.mohamedmabrouk.letsplant.util.DateTimeUtils
 import com.mohamedmabrouk.letsplant.util.NetworkState
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
+import java.util.Date
 import javax.inject.Singleton
 
 @Module
-@Suppress("unused")
 @InstallIn(SingletonComponent::class)
 object AppModule {
 
@@ -32,7 +36,7 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideFirebaseAuth() : FirebaseAuth = Firebase.auth
+    fun provideFirebaseAuth(): FirebaseAuth = Firebase.auth
 //
 //    @Provides
 //    @Singleton
@@ -70,6 +74,25 @@ object AppModule {
     fun provideNetworkState(context: Context): NetworkState {
         return NetworkState(context)
     }
+
+    @Provides
+    @Singleton
+    fun provideAppDatabase(context: Context): LetsPlantDatabase {
+        return getDatabase(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideReminderNotificationHelper(context: Context): RemindersNotificationHandler {
+        return RemindersNotificationHandler(context)
+    }
+
+    @Provides
+    @Singleton
+    fun provideTodayDate(): Date {
+        return DateTimeUtils.getCurrentDate()
+    }
+
 //
 //    @Provides
 //    @Singleton

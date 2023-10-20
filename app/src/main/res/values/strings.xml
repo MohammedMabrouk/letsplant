@@ -76,4 +76,10 @@
     <string name="water_plant_">Water plant: %s</string>
     <string name="fertilize_plant_">Fertilize plant: %s</string>
     <string name="mark_as_done">Mark as done</string>
+
+    <!--    Reminder Notifications -->
+    <string name="notification_title_water">Water plant</string>
+    <string name="notification_text_water">Your plant: %s needs to be watered!</string>
+    <string name="notification_title_fertilize">Fertilize plant</string>
+    <string name="notification_text_fertilize">Your plant: %s needs to be fertilized!</string>
 </resources>

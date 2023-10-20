@@ -1,9 +1,8 @@
 package com.mohamedmabrouk.letsplant.ui.home
 
-import android.app.Activity
+import android.content.Context
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
@@ -13,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.mohamedmabrouk.letsplant.R
 import com.mohamedmabrouk.letsplant.firebase.FirebaseManager
 import com.mohamedmabrouk.letsplant.firebase.RealtimeDbManager
+import com.mohamedmabrouk.letsplant.reminders.RemindersUtils
 import com.mohamedmabrouk.letsplant.util.LocaleHelper
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -20,6 +20,10 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
     private val TAG = "HomeActivity"
+
+    // todo : to be removed to view model
+    @Inject
+    lateinit var remindersUtils: RemindersUtils
 
     @Inject
     lateinit var firebaseManager: FirebaseManager
@@ -29,6 +33,9 @@ class HomeActivity : AppCompatActivity() {
 
     @Inject
     lateinit var localeHelper: LocaleHelper
+
+    @Inject
+    lateinit var context: Context
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +62,27 @@ class HomeActivity : AppCompatActivity() {
 //        roundDialog.window?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT)
 //        roundDialog.show()
 
+//        helper.createNotificationChannel()
+//        helper.scheduleNotification(Reminder(
+//            1,
+//            null,
+//            "Plant Name1",
+//            Date(),
+//            ReminderType.WATERING,
+//            null,
+//            null
+//        ))
+//        helper.scheduleNotification(Reminder(
+//            2,
+//            null,
+//            "Plant Name2",
+//            Date(),
+//            ReminderType.FERTILIZE,
+//            null,
+//            null
+//        ))
+
+        remindersUtils.scheduleRefreshReminders()
     }
 
     // todo: add transition animation
@@ -65,10 +93,6 @@ class HomeActivity : AppCompatActivity() {
     }
 
 
-
 //    fun obtainViewModel(): PlantsListViewModel = obtainViewModel(PlantsListViewModel::class.java)
-}
-// todo: remove
-fun Activity.showToast(){
-    Log.d("", "showToast: ")
+
 }

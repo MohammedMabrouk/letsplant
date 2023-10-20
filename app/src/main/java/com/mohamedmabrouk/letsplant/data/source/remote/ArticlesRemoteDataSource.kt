@@ -12,7 +12,6 @@ import com.mohamedmabrouk.letsplant.firebase.RealtimeDbManager
 import com.mohamedmabrouk.letsplant.util.ConnectivityUtils
 import com.mohamedmabrouk.letsplant.util.LocaleHelper
 import com.mohamedmabrouk.letsplant.util.ResourceManager
-import dagger.Module
 import javax.inject.Inject
 
 class ArticlesRemoteDataSource @Inject constructor(val context: Context) : ArticlesDataSource {

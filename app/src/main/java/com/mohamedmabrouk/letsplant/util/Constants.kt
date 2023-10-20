@@ -33,4 +33,9 @@ object Constants {
 
     const val LOGIN_SUCCESS = "LOGIN_SUCCESS"
     const val LOGIN_FAILED = "LOGIN_FAILED"
+
+
+    // Request Codes
+    const val REMINDERS_NOTIFICATION_DEFAULT_REQUEST_CODE = 1000
+    const val REMINDERS_WORKER_DEFAULT_REQUEST_CODE = 1001
 }
